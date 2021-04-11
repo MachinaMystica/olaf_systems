@@ -1,0 +1,46 @@
+﻿l_english:
+
+# Anomalies
+ OLAF_FALLEN_MAN_CAT:0 "A Curious Habitat"
+ OLAF_FALLEN_MAN_CAT_DESC:0 "Something moves with near-purpose in the decrepit habitat orbiting [ROOT.planet.GetName]..."
+ 
+ # Events Fallen Man
+ olaf.1300.name:0 "Degenerated Sapients"
+ olaf.1300.desc:0 “The [Root.GetName] sends back a startling report from [From.GetName]. The derelict habitat is home to a thriving ecosystem that has evolved over millions of years.\n\nTests conducted by Science Officer [Root.GetLeaderName] reveal that the animal population of the habitat is entirely descended from a single, now extinct species. This species was the very one who constructed the habitat, before retreating from sapience back into animal consciousness.\n\nA particular descendent of theirs shows promise and has risen to dominance in the artificial biosphere.\n\nWe might be able to uplift these unfortunate beings, with the right technology."
+ olaf.1301.name:0 "Humans Uplifted"
+ olaf.1301.desc:0 "Success!\n\nThe [From.GetName] native to [This.GetName] have been uplifted to become citizens of the [This.Owner.GetName]."
+
+ # Events First Man Rise
+ olaf.1302.name:0 "[primitive_civ.GetName] Encountered"
+ olaf.1302.desc:1 "The pre-space civilization on §Y[primitive_civ.Capital.GetName]§! possesses an unusually high level of development. The degree to which it has been covered with urban centers or industrial zones would be an accomplishment even for a space age civilization, but these primitives have accomplished it while earthbound. Apart from some sparse farmland, no traces of the natural biosphere remain visible from space.\n\nWe should build an §YObservation Post§! above their world to investigate what sets this primitive people apart."
+ olaf.1303.name:0 "[primitive_civ.GetName] Station Established"
+ olaf.1303.desc:1 "Now that our Observation Station has been established in orbit around §YEarth§!, we can begin our detailed survey of the primitive world.\n\nOf particular interest are the great archology-pylons that stretch across the globe and rise to heights of three miles. Already, our scientists and engineers are drawing inspiration from their novel architectural advances.\n\nOur scientists will report back to us when they have their conclusions."
+ olaf.1303.a:0 "Begin the planetary survey."
+ olaf.1303.b:0 "Do not trouble me about these primitives further."
+ olaf.1304.name:0 "Black Gold in the Ice Cold"
+ olaf.1304.desc:1 "Our detailed survey of the civilization on §YEarth§! is now complete.\n\nExtensive research has revealed that the planet was home to significant deposits of subterranean hydrocarbon fuels. The unusual abundance allowed the §YWorld State§! to pursue extensive urbanization and industrial development. Even their agricultural industries rely heavily on the use of hydrocarbon fuels.\n\nThe past several hundred years of civilization have severely taxed the planet's natural resources, and the §YWorld State§! is fast approaching the end of all major hydrocarbon deposits. Already, their extraction efforts are isolated to the arctic region of the planet, as other regions of the globe have been utterly depleted."
+ olaf.1304.a:0 "Continue..."
+ olaf.1305.name:0 "The Fate of the Nation"
+ olaf.1305.desc:1 "Without a major revolution in their energy sector, the primitive people of §YEarth§! are facing the total collapse of their civilization. Our scientists estimate that should their hydrocarbon resources deplete, fewer than 1% of the present population will survive.\n\nIt is up to us to determine the best approach to their precarious situation."
+ olaf.1305.a:0 "We should begin uplifting them immediately."
+ olaf.1305.b:0 "Our secret agents will plant advanced technology on their world."
+ olaf.1305.c:0 "Let the Xenos sort their own problems out, it is of no concern to us."
+ olaf.1305.d:0 "Let our sociologists observe their civilizational collapse."
+ olaf.1305.e:0 "It is not our place to interfere with their civilization."
+ olaf.1305.f:0 "We must help uplift our primitive brethren."
+ olaf.1305.g:0 "Their world will belong to us."
+ olaf.1306.name:0 "Appointed to Destruction"
+ olaf.1306.desc:1 "The last wells of §YEarth§! have run dry. Supply chains grind to a halt. The economy is in freefall. Fields falter for lack of fertilizers. Hunger - that long banished foe - is creeping into every high rise and residence. A few specks of light shine across the globe as the §YWorld State§! hordes its scant remaining fuel stores for the utmost of essential facilities. Darkness will soon find them too.\n\nCivilizational collapse is now in full swing. It is only a matter of months before widespread starvation begins. The §YWorld State§!'s primitive military is straining to keep the mounting tensions under control. Already, violence is rearing its ugly head where shelves have run bare."
+ olaf.1306.a:0 "A tragic turn of events."
+ olaf.1306.b:0 "Their unworthiness has doomed them."
+ olaf.1306.c:0 "Continue monitoring the situation, this is a rich source of data."
+ olaf.1306.d:0 "Let them writhe, they were always doomed."
+ olaf.1307.name:0 "Quietly into that Night"
+ olaf.1307.desc:1 "§YEarth§! has grown quiet and still; the widespread violence and starvation of a dying world have given way to eerie desolation. The once bustling ecumenopolis is already crumbling into ruins. The largest of the pylons will remain for millennium, but the rest are quickly being overgrown. Nature has begun its slow march towards reclamation. Those former pets and caged zoo animals that managed an escape to the narrow corners of the planet now have begun establishing new ecosystems.\n\nThe dominion of §YHumans§! has come to an end. What few members of their unfortunate species remain have reduced to scattered tribes of hunter-gathers, eking out a harsh living.\n\nWithout outside intervention or a dramatic period of global volcanism, it is likely §YHumans§! are eternally condemned to this globe. Their depleted world is unlikely to ever support widespread industrial civilization again."
+ olaf.1307.a:0 "Perhaps we should have intervened."
+ olaf.1307.b:0 "A poignant lesson on the inferiority of the Xeno. "
+ olaf.1307.c:0 "There is nothing more for us to learn on this ill-fated world."
+ olaf.1307.d:0 "We will make quick work of the stragglers."
+
+ # Misc
+ PRE_HUM:0 "Humanoid"

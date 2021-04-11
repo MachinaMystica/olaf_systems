@@ -1,0 +1,15 @@
+##############################################################
+###	PORTRAITS SETTINGS
+###
+### Which portraits are used is set in 
+### common\species_classes\00_species_classes.txt
+###
+###	This file configures how portraits and planet backgrounds are built.
+###	Default position orientation is lower left.
+##############################################################
+
+portraits = {
+	# Pre-sapient				
+	pre_hum1 	= {	entity = "portrait_human_female_01_entity" 	clothes_selector = "no_texture" hair_selector = "human_female_hair_01" greeting_sound = "human_female_greetings_03" }
+	pre_hum2	= {	entity = "portrait_human_male_01_entity" 	clothes_selector = "no_texture" hair_selector = "human_male_hair_01" greeting_sound = "human_male_greetings_03" }
+}

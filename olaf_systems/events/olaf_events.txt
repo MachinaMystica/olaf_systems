@@ -1,0 +1,433 @@
+namespace = olaf
+
+### Fallen Man
+
+### Uplifting Fallen Man 
+ship_event = {
+	id = olaf.1300
+	title = "olaf.1300.name"
+	desc = "olaf.1300.desc"
+	picture = GFX_evt_gas_giant_station
+	location = FROM
+	show_sound = event_default
+
+	is_triggered_only = yes
+
+	immediate = {
+		owner = { set_country_flag = upl_fallen_man }
+		owner = { set_country_flag = found_presapients }
+		owner = { country_event = { id = tutorial.57 days = 5 } }
+		owner = { country_event = { id = story.4 days = 30 } }
+		FROM = {
+			if = {
+				limit = { has_modifier = hazardous_weather }
+				remove_modifier = hazardous_weather
+			}
+			if = {
+				limit = { has_modifier = unstable_tectonics }
+				remove_modifier = unstable_tectonics
+			}
+			if = {
+				limit = { has_modifier = asteroid_impacts }
+				remove_modifier = asteroid_impacts
+			}
+			if = {
+				limit = { has_modifier = wild_storms }
+				remove_modifier = wild_storms
+			}
+			if = {
+				limit = { has_modifier = low_gravity }
+				remove_modifier = low_gravity
+			}
+			if = {
+				limit = { has_modifier = damaged_ecology }
+				remove_modifier = damaged_ecology
+			}
+			set_planet_flag = prehuman_planet
+			create_species = {
+				name = "Human"
+				plural = "Humans"
+				class = "PRE_HUM"
+				portrait = random
+				traits = {
+					trait = random_presapient_trait
+				}
+				homeworld = FROM
+				sapient = no
+			}
+			while = {
+				limit = {
+					count_pops = {
+						limit = { is_sapient = no }
+						count < 3
+					}
+				}
+				create_pop = { species = last_created }
+			}
+		}
+	}
+
+	option = {
+		name = uplift.6000.a
+		trigger = {
+			owner = { has_technology = "tech_epigenetic_triggers" }
+		}
+	}
+
+	option = {
+		name = uplift.6000.b
+		trigger = {
+			owner = { NOT = { has_technology = "tech_epigenetic_triggers" } }
+		}
+	}
+}
+
+### Uplifting Fallen Man Success
+planet_event = {
+	id = olaf.1301
+	title = "olaf.1301.name"
+	desc = "olaf.1301.desc"
+	picture = GFX_evt_society_research
+	location = root
+	show_sound = notification_uplift
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_planet_flag = prehuman_planet
+	}
+
+	immediate = {
+		owner = { remove_country_flag = upl_fallen_man }
+	}
+
+	option = {
+		name = uplift.6011.a
+		hidden_effect = { owner = { country_event = { id = tutorial.58 days = 5 } } }
+		hidden_effect = {
+			remove_planet_flag = prehuman_planet
+			planet_event = { id = uplift.7199 }
+		}
+	}
+}
+
+### First Man Age of Glory
+
+### On survey
+ship_event = {
+	id = olaf.1302
+	title = "olaf.1302.name"
+	desc = "olaf.1302.desc"
+	picture = GFX_evt_metropolis
+	show_sound = event_radio_chatter
+	location = from
+	is_triggered_only = yes
+	trigger = { 
+		from = { 
+			has_planet_flag = olaf_first_men_rise_planet
+		}
+	}
+	
+	option = {
+		name = INTERESTING
+		hidden_effect = { country_event = { id = story.6 days = 30 } }
+	}
+}
+
+# Observation Station Built
+ship_event = {
+	id = olaf.1303
+	title = "olaf.1303.name"
+	desc = "olaf.1303.desc"
+	picture = GFX_evt_metropolis
+	location = from
+	is_triggered_only = yes
+
+	trigger = {
+		exists = from.owner
+		from.owner = { has_country_flag = olaf_first_men_rise }
+	}
+
+	immediate = {
+		event_target:olaf_first_men_rise_planet = {
+			add_modifier = {
+				modifier = "gas_rich_planet_fo_realz"
+				days = 18000
+			}
+		}
+	}
+
+	after = {
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier5researchreward
+				min = @tier5researchmin
+				max = @tier5researchmax
+			}
+		}
+	}
+
+	option = {
+		name = olaf.1303.a
+		begin_event_chain = {
+			event_chain = OLAFRISE_CHAIN_1
+			target = root.owner
+		}
+		hidden_effect = {
+			ship_event = { id = olaf.1304 days = 360 }
+		}
+	}
+
+	option = {
+		name = olaf.1303.b
+	}
+}
+
+### Switch to country event
+ship_event = {
+	id = olaf.1304
+	title = olaf.1304.name
+	desc = olaf.1304.desc
+	picture = GFX_evt_olaf_arctic_industrial
+	location = from
+	is_triggered_only = yes
+
+	after = {
+		owner = {
+			country_event = { 
+				id = olaf.1305
+			}
+		}
+	}
+	
+	option = {
+		name = olaf.1304.a
+	}
+}
+
+### Branching pathway
+country_event = {
+	id = olaf.1305
+	title = olaf.1305.name
+	desc = olaf.1305.desc
+	picture = GFX_evt_olaf_arctic_industrial
+	location = from
+	is_triggered_only = yes
+	
+	### Uplifting route
+	option = {
+		trigger = {
+			NOR = {
+				has_ethic = ethic_fanatic_xenophobe
+				has_valid_civic = civic_fanatic_purifiers
+				has_valid_civic = civic_hive_devouring_swarm
+				has_valid_civic = civic_machine_terminator
+			}
+		}
+		name = olaf.1305.a
+	}
+
+	### Infiltration route
+	option = {
+		trigger = {
+			NOR = {
+				has_valid_civic = civic_fanatic_purifiers
+				has_valid_civic = civic_hive_devouring_swarm
+				has_valid_civic = civic_machine_terminator
+			}
+		}
+		name = olaf.1305.b
+	}
+
+	### Observation route
+	option = {
+		trigger = {
+			OR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		name = olaf.1305.d
+		hidden_effect = {
+			set_country_flag = observing_earth_collapse
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier6researchreward
+				min = @tier6researchmin
+				max = @tier6researchmax
+			}
+		}
+	}
+
+	### Xenophobe noninterference route
+	option = {
+		trigger = {
+			AND = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+				NOT = {
+					has_valid_civic = civic_fanatic_purifiers
+				}
+			}
+		}
+		name = olaf.1305.c
+		hidden_effect = {
+			country_event = { id = olaf.1306 days = 8640 random = 9000 }
+		}
+	}
+
+	### Generic noninterference route
+	option = {
+		trigger = {
+			NOR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		name = olaf.1305.e
+		hidden_effect = {
+			country_event = { id = olaf.1306 days = 8640 random = 9000 }
+		}
+	}
+
+	### Human purifiers uplift option
+	option = {
+		trigger = {
+			AND = {
+				has_valid_civic = civic_fanatic_purifiers
+				root = { species_portrait = human }
+			}
+		}
+		name = olaf.1305.f
+	}
+
+	### Generic Genocidals route
+	option = {
+		trigger = {
+			OR = {
+				has_valid_civic = civic_fanatic_purifiers
+				has_valid_civic = civic_hive_devouring_swarm
+				has_valid_civic = civic_machine_terminator
+			}
+		}
+		name = olaf.1305.g
+		hidden_effect = {
+			country_event = { id = olaf.1306 days = 8640 random = 9000 }
+		}
+	}
+}
+
+# Earth Civilization Doomed
+country_event = {
+	id = olaf.1306
+	title = olaf.1306.name
+	desc = olaf.1306.desc
+	picture = GFX_evt_olaf_arctic_industrial_ruin
+	location = from
+	is_triggered_only = yes
+
+	after = {
+		event_target:olaf_first_men_rise_planet = {
+			planet_event = { 
+				id = olaf.1308
+			}
+		}
+	}
+
+	### Generic noninterference route
+	option = {
+		trigger = {
+			NOR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+				has_country_flag = observing_earth_collapse
+			}
+		}
+		name = olaf.1306.a
+		hidden_effect = {
+			country_event = { id = olaf.1307 days = 1800 }
+		}
+	}
+
+	### Xenophobe noninterference route
+	option = {
+		trigger = {
+			AND = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+				NOT = {
+					has_valid_civic = civic_fanatic_purifiers
+				}
+			}
+		}
+		name = olaf.1306.b
+		hidden_effect = {
+			country_event = { id = olaf.1307 days = 1800 }
+		}
+	}
+
+	### Observation route
+	option = {
+		trigger = {
+			has_country_flag = observing_earth_collapse
+		}
+		name = olaf.1306.c
+		hidden_effect = {
+			country_event = { id = olaf.1307 days = 1800 }
+		}
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier6researchreward
+				min = @tier6researchmin
+				max = @tier6researchmax
+			}
+		}
+	}
+
+	### Generic Genocidals route
+	option = {
+		trigger = {
+			OR = {
+				has_valid_civic = civic_fanatic_purifiers
+				has_valid_civic = civic_hive_devouring_swarm
+				has_valid_civic = civic_machine_terminator
+			}
+		}
+		name = olaf.1306.d
+		hidden_effect = {
+			country_event = { id = olaf.1307 days = 1800 }
+		}
+	}
+}
+
+### Hidden Event following Doomed Earth
+planet_event = {
+	id = olaf.1308
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:olaf_first_men_rise_planet = {
+			remove_modifier = {
+				modifier = "gas_rich_planet_fo_realz"
+			}
+			add_modifier = {
+				modifier = "mineral_poor"
+			}
+			random_pop = {
+				kill_pop = yes
+			}
+			random_pop = {
+				kill_pop = yes
+			}
+		}
+	}
+}

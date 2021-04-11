@@ -1,0 +1,111 @@
+namespace = olaf_init
+
+####################################
+### On Actions Events ##############
+####################################
+# On game start
+event = {
+	id = olaf_init.13
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = olaf_systems
+
+		# System Initializer
+		if = {
+			limit = { 
+				NOT = { 
+					any_system = { 
+						has_star_flag = sol
+					}
+				} 
+			}
+			random_list = {
+				10 = {
+					random_system = {
+						limit = { has_owner = no }
+						spawn_system = { initializer = "olafterra_system_initializer" }
+					}
+					add_extra_hyperlane_to_spawned_system_effect = yes
+				}
+				10 = {
+					random_system = {
+						limit = { has_owner = no }
+						spawn_system = { initializer = "olafterra2_system_initializer" }
+					}
+					add_extra_hyperlane_to_spawned_system_effect = yes
+				}
+				10 = {
+					random_system = {
+						limit = { has_owner = no }
+						spawn_system = { initializer = "olafterra3_system_initializer" }
+					}
+					add_extra_hyperlane_to_spawned_system_effect = yes
+				}
+				10 = {
+					random_system = {
+						limit = { has_owner = no }
+						spawn_system = { initializer = "olafterra4_system_initializer" }
+					}
+					add_extra_hyperlane_to_spawned_system_effect = yes
+				}
+				10 = {
+					random_system = {
+						limit = { has_owner = no }
+						spawn_system = { initializer = "olafterra5_system_initializer" }
+					}
+					add_extra_hyperlane_to_spawned_system_effect = yes
+				}
+				10 = {
+					random_system = {
+						limit = { has_owner = no }
+						spawn_system = { initializer = "olafterra6_system_initializer" }
+					}
+					add_extra_hyperlane_to_spawned_system_effect = yes
+				}
+				10 = {
+					random_system = {
+						limit = { has_owner = no }
+						spawn_system = { initializer = "olafvenus_system_initializer" }
+					}
+					add_extra_hyperlane_to_spawned_system_effect = yes
+				}
+				10 = {
+					random_system = {
+						limit = { has_owner = no }
+						spawn_system = { initializer = "olafvenus2_system_initializer" }
+					}
+					add_extra_hyperlane_to_spawned_system_effect = yes
+				}
+				10 = {
+					random_system = {
+						limit = { has_owner = no }
+						spawn_system = { initializer = "olafvenus3_system_initializer" }
+					}
+					add_extra_hyperlane_to_spawned_system_effect = yes
+				}
+				10 = {
+					random_system = {
+						limit = { has_owner = no }
+						spawn_system = { initializer = "olafneptune_system_initializer" }
+					}
+					add_extra_hyperlane_to_spawned_system_effect = yes
+				}
+				10= {
+					random_system = {
+						limit = { has_owner = no }
+						spawn_system = { initializer = "olafneptune2_system_initializer" }
+					}
+					add_extra_hyperlane_to_spawned_system_effect = yes
+				}
+				10 = {
+					random_system = {
+						limit = { has_owner = no }
+						spawn_system = { initializer = "olafneptune3_system_initializer" }
+					}
+					add_extra_hyperlane_to_spawned_system_effect = yes
+				}
+			}
+		}
+	}

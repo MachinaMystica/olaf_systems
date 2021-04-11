@@ -1,0 +1,30 @@
+# Spawn System 
+on_game_start = {
+	events = { 
+		olaf_init.13
+	} 
+}
+
+# Primitive Humans
+on_uplift_completion = {
+	events = {
+		olaf.1301
+		factions.1005
+	}
+}
+
+# Earth First Men Rise
+
+# Surveyed Earth
+on_survey = {
+	events = { 
+		olaf.1302
+	}
+}
+
+#First Men Observation Station Built
+on_building_observation_station = {					
+	events = { 
+		olaf.1303
+	} 
+}

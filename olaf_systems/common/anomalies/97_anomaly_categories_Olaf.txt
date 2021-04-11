@@ -1,0 +1,15 @@
+OLAF_FALLEN_MAN_CAT = {
+	desc = "OLAF_FALLEN_MAN_CAT_DESC"
+	picture = "GFX_gas_giant_station"
+	level = 2
+
+	should_ai_and_humans_use = yes
+	
+	spawn_chance = {
+		modifier = {
+			add = 0 #Handled in SysInit
+		}
+	}
+	
+	on_success = olaf.1300
+}

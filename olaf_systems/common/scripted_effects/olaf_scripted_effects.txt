@@ -1,0 +1,36 @@
+olaf_earth_collapse_effect = {
+	destroy_colony = yes
+	change_pc = pc_relic
+	reroll_planet = yes
+	remove_all_buildings = yes
+	add_deposit = d_collapsed_spire
+	add_deposit = d_massive_crevice
+	add_deposit = d_shattered_solar_array
+	add_deposit = d_flooded_reactor_pits
+	add_deposit = d_crumbling_mining_tunnels
+	create_country = {
+		name = random
+		authority = random
+		civics = {
+			civic = civic_secret_of_fire
+			civic = civic_the_wheel
+		}
+		species = event_target:olaf_first_men
+		ethos = random
+		origin = "origin_enlightened" # Should only be visible if they become spacefaring
+		flag = random
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = preindustrial_01
+		set_country_flag = stone_age
+		set_primitive_age = stone_age
+	}
+	while = {
+		count = 1
+		create_pop = {
+			species = event_target:olaf_first_men
+		}
+	}
+	add_building = building_crude_huts
+}

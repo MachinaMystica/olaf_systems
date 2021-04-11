@@ -1,0 +1,24 @@
+spriteTypes = {	
+
+
+	spriteType = {
+		name = "GFX_evt_olaf_arctic_industrial"
+		texturefile = "gfx/event_pictures/olaf_arctic_industrial.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+
+	spriteType = {
+		name = "GFX_evt_olaf_arctic_industrial_ruin"
+		texturefile = "gfx/event_pictures/olaf_arctic_industrial_ruin.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+
+	spriteType = {
+		name = "GFX_evt_olaf_ruined_earth"
+		texturefile = "gfx/event_pictures/olaf_ruined_earth.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+}

@@ -1,0 +1,991 @@
+#################################
+### Generate Primitives #########
+#################################
+#Olaf First Men Age of Glory
+generate_olaffirstmanrise_primitives_on_planet = {
+	create_species = {
+		name = Human
+		plural = Humans
+		class = "HUM"
+		portrait = "human"
+		traits = {
+			ideal_planet_class = "pc_continental"
+			trait = "trait_adaptive"
+			trait = "trait_nomadic"	
+			trait = "trait_wasteful"
+		}
+		homeworld = this
+		effect = {
+			save_global_event_target_as = olaf_first_men
+		}
+	}
+	create_country = {
+		name = "World State"
+		authority = "auth_oligarchic"
+		civics = {
+			civic = civic_increasing_urbanization
+			civic = civic_atmospheric_pollution
+		}
+		species = last_created
+		ethos = { 
+			ethic = "ethic_authoritarian"
+			ethic = "ethic_pacifist"
+			ethic = "ethic_spiritualist"
+		}
+		origin = "origin_enlightened" # Should only be visible if they become spacefaring
+		flag = {
+			icon = {
+				category = "human"
+				file = "flag_human_9.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "circle.dds"
+			}
+			colors={
+				"light_blue"
+				"dark_blue"
+				"null"
+				"null"
+			}
+		}
+		day_zero_contact = no
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = industrial_01
+		set_country_flag = machine_age
+		set_primitive_age = machine_age
+		set_country_flag = olaf_first_men_rise
+	}
+	while = {
+		count = 24
+		create_pop = {
+			species = event_target:olaf_first_men
+		}
+	}
+	add_building = building_primitive_farm
+	add_building = building_primitive_factory
+	add_building = building_primitive_mine
+	add_building = building_primitive_power_plant
+	add_building = building_primitive_capital
+	add_building = building_urban_dwellings
+	create_primitive_blockers = yes
+	
+	create_army = {
+		name = "US Armed Forces West"
+		owner = last_created
+		species = last_created
+		type = "industrial_army"
+	}
+	create_army = {
+		name = "US Armed Forces East"
+		owner = last_created
+		species = last_created
+		type = "industrial_army"
+	}
+	create_army = {
+		name = "Chinese PLA"
+		owner = last_created
+		species = last_created
+		type = "industrial_army"
+	}
+	create_army = {
+		name = "Russian Armed Forces"
+		owner = last_created
+		species = last_created
+		type = "industrial_army"
+	}
+	create_army = {
+		name = "EU Combined Forces"
+		owner = last_created
+		species = last_created
+		type = "industrial_army"
+	}
+}
+
+#Olaf First Men Pantagonia
+generate_olaffirstmanfall_primitives_on_planet = {
+	create_species = {
+		name = Human
+		plural = Humans
+		class = "HUM"
+		portrait = "human"
+		traits = {
+			ideal_planet_class = "pc_continental"
+			trait = "trait_presapient_conservative"
+			trait = "trait_docile"	
+			trait = "trait_traditional"
+			trait = "trait_fleeting"
+			trait = "trait_slow_breeders"
+		}
+		homeworld = this
+		effect = {
+			save_global_event_target_as = pantagonianrulers
+		}
+	}
+	create_species = {
+		name = Human
+		plural = Humans
+		class = "HUM"
+		portrait = "human"
+		traits = {
+			ideal_planet_class = "pc_continental"
+			trait = "trait_syncretic_proles"
+			trait = "trait_docile"	
+			trait = "trait_fleeting"
+			trait = "trait_slow_breeders"
+		}
+		homeworld = this
+		effect = {
+			save_global_event_target_as = pantagonianproles
+		}
+	}
+	create_country = {
+		name = "Pantagonian Hierarchy"
+		authority = "auth_imperial"
+		civics = {
+			civic = civic_landed_nobility
+			civic = civic_flat_world_theory
+		}
+		species = last_created
+		ethos = { 
+			ethic = "ethic_authoritarian"
+			ethic = "ethic_spiritualist"
+			ethic = "ethic_pacifist"
+		}
+		origin = "origin_syncretic_evolution" # Should only be visible if they become spacefaring
+		flag = {
+			icon = {
+				category = "blocky"
+				file = "flag_blocky_13.dds"
+			}
+			background = {
+				category = "backgrounds"
+				file = "stripe.dds"
+			}
+			colors = {
+				"dark_grey"
+				"dark_purple"
+				"null"
+				"null"
+			}
+		}
+		day_zero_contact = no
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = preindustrial_01
+		set_country_flag = steam_age
+		set_primitive_age = steam_age
+		set_country_flag = olaf_first_men_fall
+	}
+	add_building = building_stone_palace	
+	add_building = building_urban_dwellings
+	add_building = building_primitive_factory
+	add_building = building_primitive_mine	
+	create_primitive_blockers = yes
+	add_deposit = d_collapsed_spire
+	add_deposit = d_massive_crevice
+	add_deposit = d_shattered_solar_array
+	add_deposit = d_flooded_reactor_pits
+	add_deposit = d_crumbling_mining_tunnels
+	
+	while = {
+		count = 4
+		create_pop = {
+			species = event_target:pantagonianrulers
+		}
+	}
+	while = {
+		count = 12
+		create_pop = {
+			species = event_target:pantagonianproles
+		}
+	}
+}
+
+#Olaf Second Men - Tragedy of the Two Worlds
+generate_olafsecondman_primitives_on_planet = {
+	create_species = {
+		name = Human
+		plural = Humans
+		class = "HUM"
+		portrait = "human"
+		traits = {
+			ideal_planet_class = "pc_arctic"
+			trait = "trait_intelligent"
+			trait = "trait_communal"	
+			trait = "trait_enduring"
+			trait = "trait_nonadaptive"
+		}
+		homeworld = this
+	}
+	create_country = {
+		name = "Earth Defense Coalition"
+		authority = "auth_democratic"
+		day_zero_contact = no
+		civics = {
+			civic = civic_increasing_urbanization
+			civic = civic_atmospheric_pollution
+		}
+		species = last_created
+		ethos = {
+			ethic = "ethic_fanatic_xenophobe"
+			ethic = "ethic_militarist"
+		}
+		origin = "origin_enlightened" # Should only be visible if they become spacefaring
+		flag = {
+			icon = {
+				category = "domination"
+				file = "domination_8.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "v.dds"
+			}
+			colors={
+				"light_blue"
+				"green"
+				"null"
+				"null"
+			}
+		}
+		day_zero_contact = no
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = industrial_01
+		set_country_flag = atomic_age
+		set_primitive_age = atomic_age
+		set_country_flag = olaf_second_men
+	}
+	while = {
+		count = 26
+		create_pop = {
+			species = last_created
+		}
+	}
+	add_building = building_primitive_farm
+	add_building = building_primitive_factory
+	add_building = building_primitive_mine
+	add_building = building_primitive_power_plant
+	add_building = building_primitive_capital
+	add_building = building_urban_dwellings
+	create_primitive_blockers = yes
+}
+
+#Olaf Second Men - Martians
+generate_olafsecondmanmars_primitives_on_planet = {
+	create_species = {
+		name = Martian
+		plural = Martians
+		class = "NECROID"
+		portrait = "nec4"
+		homeworld = THIS
+		traits = {
+			trait = "trait_hive_mind"
+			trait = "trait_rapid_breeders"
+			trait = "trait_presapient_starborn"
+			trait = "trait_solitary"
+		}
+	}
+	create_country = {
+		name = "Martian Sublimate"
+		authority = "auth_hive_mind"
+		day_zero_contact = no
+		civics = {
+			civic = civic_increasing_urbanization
+			civic = civic_atmospheric_pollution
+		}
+		species = last_created
+		ethos = {
+			ethic = "ethic_gestalt_consciousness"	
+		}
+		origin = "origin_default" # Should only be visible if they become spacefaring
+		flag = {
+			icon = {
+				category = "legion"
+				file = "flag_mp_beta_01.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "horizontal_stripe.dds"
+			}
+			colors={
+				"orange"
+				"red"
+				"null"
+				"null"
+			}
+		}
+		day_zero_contact = no
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = industrial_01
+		set_country_flag = early_space_age
+		set_primitive_age = early_space_age
+		set_country_flag = olaf_second_men_martians
+	}
+	while = {
+		count = 28
+		create_pop = {
+			species = last_created
+		}
+	}
+	add_building = building_primitive_farm
+	add_building = building_primitive_factory
+	add_building = building_primitive_mine
+	add_building = building_primitive_power_plant
+	add_building = building_primitive_capital
+	add_building = building_urban_dwellings
+	create_primitive_blockers = yes
+	create_fleet = {
+		name = "Terra Invasion Gate" 
+		effect = {
+			set_owner = last_created_country
+			create_ship = {
+				name = "Terra Waypoint"
+				design = "NAME_Space_Station"
+			}
+			set_location = PREV
+		}
+	}
+}
+
+#Olaf Third Men - Age of Manipulation
+generate_olafthirdman_primitives_on_planet = {
+	create_species = {
+		name = Human
+		plural = Humans
+		class = "HUM"
+		portrait = "human"
+		traits = {
+			ideal_planet_class = "pc_tropical"
+			trait = "trait_charismatic"
+			trait = "trait_natural_sociologists"	
+			trait = "trait_fleeting"
+		}
+		homeworld = this
+	}
+	create_country = {
+		name = "Holy Empire of Music"
+		authority = "auth_imperial"
+		civics = {
+			civic = civic_landed_nobility
+			civic = civic_flat_world_theory
+		}
+		species = last_created
+		ethos = { 
+			ethic = "ethic_authoritarian"
+			ethic = "ethic_spiritualist"
+			ethic = "ethic_xenophile"
+		}
+		origin = "origin_enlightened" # Should only be visible if they become spacefaring
+		flag = {
+			icon = {
+				category = "ornate"
+				file = "flag_ornate_8.dds"
+			}
+			background = {
+				category = "backgrounds"
+				file = "circle.dds"
+			}
+			colors = {
+				"dark_purple"
+				"black"
+				"null"
+				"null"
+			}
+		}
+		day_zero_contact = no
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = preindustrial_01
+		set_country_flag = late_medieval_age
+		set_primitive_age = late_medieval_age
+		set_country_flag = olaf_third_men
+	}
+	while = {
+		count = 10
+		create_pop = {
+			species = last_created
+		}
+	}
+	add_building = building_primitive_dwellings
+	add_building = building_primitive_dwellings
+	add_building = building_stone_palace	
+	create_primitive_blockers = yes
+}
+
+#Olaf Fourth Men - Age of Subservience
+generate_olaffourthman_primitives_on_planet = {
+	create_species = {
+		name = "Neuro-Human"
+		plural = "Neuro-Humans"
+		class = "NECROID"
+		portrait = "nec8"
+		homeworld = THIS
+		traits = {
+			ideal_planet_class = "pc_nuked"
+			trait = "trait_necrophage"
+			trait = "trait_cybernetic"	
+			trait = "trait_erudite"
+			trait = "trait_nonadaptive"
+			trait = "trait_slow_breeders"
+			trait = "trait_sedentary"
+		}
+		homeworld = this
+		effect = {
+			save_global_event_target_as = fourthmenrulers
+		}
+	}
+	create_species = {
+		name = Human
+		plural = Humans
+		class = "HUM"
+		portrait = "human"
+		traits = {
+			ideal_planet_class = "pc_nuked"
+			trait = "trait_nerve_stapled"
+			trait = "trait_charismatic"	
+			trait = "trait_fleeting"
+			trait = "trait_slow_learners"
+		}
+		homeworld = this
+		effect = {
+			save_global_event_target_as = thirdmenstapled
+		}
+	}
+	create_country = {
+		name = "Earth Neurocracy"
+		authority = "auth_dictatorial"
+		day_zero_contact = no
+		civics = {
+			civic = civic_increasing_urbanization
+			civic = civic_atmospheric_pollution
+		}
+		species = last_created
+		ethos = {
+			ethic = "ethic_authoritarian"
+			ethic = "ethic_fanatic_materialist"			
+		}
+		origin = "origin_necrophage" # Should only be visible if they become spacefaring
+		flag = {
+			icon = {
+				category = "spherical"
+				file = "flag_spherical_1.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "circle.dds"
+			}
+			colors={
+				"red"
+				"grey"
+				"null"
+				"null"
+			}
+		}
+		day_zero_contact = no
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = industrial_01
+		set_country_flag = atomic_age
+		set_primitive_age = atomic_age
+		set_country_flag = olaf_fourth_men
+	}
+	add_building = building_primitive_farm
+	add_building = building_primitive_factory
+	add_building = building_primitive_mine
+	add_building = building_primitive_power_plant
+	add_building = building_primitive_capital
+	add_building = building_urban_dwellings
+	create_primitive_blockers = yes
+	
+	while = {
+		count = 6
+		create_pop = {
+			species = event_target:fourthmenrulers
+		}
+	}
+	while = {
+		count = 20
+		create_pop = {
+			species = event_target:thirdmenstapled
+		}
+	}
+}
+
+#Olaf Fifth Men - Age of Splendor
+generate_olaffifthman_primitives_on_planet = {
+	create_species = {
+		name = Human
+		plural = Humans
+		class = "HUM"
+		portrait = "human"
+		traits = {
+			ideal_planet_class = "pc_continental"
+			trait = "trait_latent_psionic"
+			trait = "trait_robust"	
+			trait = "trait_intelligent"
+			trait = "trait_enduring"
+			trait = "trait_limited_regeneration"
+		}
+		homeworld = this
+	}
+	create_country = {
+		name = "Earth Utopian Society"
+		authority = "auth_democratic"
+		day_zero_contact = no
+		civics = {
+			civic = civic_increasing_urbanization
+			civic = civic_atmospheric_pollution
+		}
+		species = last_created
+		ethos = {
+			ethic = "ethic_fanatic_egalitarian"
+			ethic = "ethic_spiritualist"			
+		}
+		origin = "origin_enlightened" # Should only be visible if they become spacefaring
+		flag = {
+			icon = {
+				category = "human"
+				file = "flag_human_3.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "new_dawn.dds"
+			}
+			colors={
+				"dark_purple"
+				"light_blue"
+				"null"
+				"null"
+			}
+		}
+		day_zero_contact = no
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = industrial_01
+		set_country_flag = early_space_age
+		set_primitive_age = early_space_age
+		set_country_flag = olaf_fifth_men
+	}
+	while = {
+		count = 28
+		create_pop = {
+			species = last_created
+		}
+	}
+	add_building = building_primitive_farm
+	add_building = building_primitive_factory
+	add_building = building_primitive_mine
+	add_building = building_primitive_power_plant
+	add_building = building_primitive_capital
+	add_building = building_urban_dwellings	
+	create_primitive_blockers = yes
+	
+	create_fleet = {
+		name = "NAME_ISS_II" 
+		effect = {
+			set_owner = last_created_country
+			create_ship = {
+				name = "NAME_ISS_II"
+				design = "NAME_Space_Station"
+			}
+			set_location = PREV
+		}
+	}
+}
+
+#Olaf Sixth Men - Survivors of Earth
+generate_olafsixthman_primitives_on_planet = {
+	create_species = {
+		name = Human
+		plural = Humans
+		class = "HUM"
+		portrait = "human"
+		traits = {
+			ideal_planet_class = "pc_ocean"
+			trait = "trait_presapient_earthbound"
+			trait = "trait_communal"	
+			trait = "trait_slow_learners"
+		}
+		homeworld = this
+	}
+	create_country = {
+		name = "Survivors of Earth"
+		authority = "auth_imperial"
+		civics = {
+			civic = civic_secret_of_fire
+			civic = civic_the_wheel
+		}
+		species = last_created
+		ethos = {
+			ethic = "ethic_authoritarian"
+			ethic = "ethic_militarist"	
+			ethic = "ethic_xenophobe"
+		}
+		origin = "origin_enlightened" # Should only be visible if they become spacefaring
+		flag = {
+			icon = {
+				category = "domination"
+				file = "domination_21.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "v.dds"
+			}
+			colors={
+				"red"
+				"red_orange"
+				"null"
+				"null"
+			}
+		}
+		day_zero_contact = no
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = preindustrial_01
+		set_country_flag = bronze_age
+		set_primitive_age = bronze_age
+		set_country_flag = olaf_sixth_men
+	}
+	while = {
+		count = 8
+		create_pop = {
+			species = last_created
+		}
+	}
+	add_building = building_primitive_dwellings
+	add_building = building_stone_palace
+	create_primitive_blockers = yes
+}
+
+#Olaf Seventh Men - Age of Liberation
+generate_olafseventhman_primitives_on_planet = {
+	create_species = {
+		name = "Winged Human"
+		plural = "Winged Humans"
+		class = "MAM"
+		portrait = "mam1"
+		traits = {
+			ideal_planet_class = "pc_ocean"
+			trait = "trait_presapient_natural_intellectuals"
+			trait = "trait_nomadic"
+			trait = "trait_traditional"
+			trait = "trait_fleeting"
+			trait = "trait_weak"
+		}
+		homeworld = this
+	}
+	create_country = {
+		name = "Elysium of Man"
+		authority = "auth_oligarchic"
+		civics = {
+			civic = civic_secret_of_fire
+			civic = civic_the_wheel
+		}
+		species = last_created
+		ethos = {
+			ethic = "ethic_fanatic_pacifist"
+			ethic = "ethic_xenophile"
+		}
+		origin = "origin_enlightened" # Should only be visible if they become spacefaring
+		flag = {
+			icon = {
+				category = "zoological"
+				file = "flag_zoological_7.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "diagonal.dds"
+			}
+			colors={
+				"yellow"
+				"light_green"
+				"null"
+				"null"
+			}
+		}
+		day_zero_contact = no
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = preindustrial_01
+		set_country_flag = stone_age
+		set_primitive_age = stone_age
+		set_country_flag = olaf_seventh_men
+	}
+	while = {
+		count = 4
+		create_pop = {
+			species = last_created
+		}
+	}
+	add_building = building_crude_huts
+	create_primitive_blockers = yes
+}
+
+#Olaf Eighth Men - Age of Industry
+generate_olafeighthman_primitives_on_planet = {
+	create_species = {
+		name = Human
+		plural = Humans
+		class = "HUM"
+		portrait = "human"
+		traits = {
+			ideal_planet_class = "pc_ocean"
+			trait = "trait_industrious"
+			trait = "trait_thrifty"	
+			trait = "trait_natural_engineers"
+			trait = "trait_quarrelsome"
+			trait = "trait_unruly"
+		}
+		homeworld = this
+	}
+	create_country = {
+		name = "Venusian Industrial Conglomerates"
+		authority = "auth_corporate"
+		civics = {
+			civic = civic_increasing_urbanization
+			civic = civic_atmospheric_pollution
+		}
+		species = last_created
+		ethos = { 
+			ethic = "ethic_authoritarian"
+			ethic = "ethic_militarist"
+			ethic = "ethic_materialist"
+		}
+		origin = "origin_enlightened" # Should only be visible if they become spacefaring
+		flag = {
+			icon = {
+				category = "corporate"
+				file = "corporate_06.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "horizontal_stripe.dds"
+			}
+			colors={
+				"dark_brown"
+				"beige"
+				"null"
+				"null"
+			}
+		}
+		day_zero_contact = no
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = industrial_01
+		set_country_flag = industrial_age
+		set_primitive_age = industrial_age
+		set_country_flag = olaf_eighth_men
+	}
+	while = {
+		count = 22
+		create_pop = {
+			species = last_created
+		}
+	}
+	add_building = building_primitive_farm
+	add_building = building_primitive_factory
+	add_building = building_primitive_mine
+	add_building = building_primitive_power_plant
+	add_building = building_primitive_capital
+	add_building = building_urban_dwellings
+	create_primitive_blockers = yes
+}
+
+#Olaf Ninth Men - Age of Decline
+generate_olafninthman_primitives_on_planet = {
+	create_species = {
+		name = "Dwarf Human"
+		plural = "Dwarf Humans"
+		class = "HUM"
+		portrait = "humanoid_hp_11"
+		traits = {
+			trait = "trait_presapient_proles"
+			trait = "trait_enigmatic_intelligence_failed"
+			trait = "trait_quarrelsome"
+			trait = "trait_unruly"
+			trait = "trait_nonadaptive"
+		}
+		homeworld = this
+	}
+	create_country = {
+		name = "Neptunian Despoilers"
+		authority = "auth_imperial"
+		civics = {
+			civic = civic_secret_of_fire
+			civic = civic_the_wheel
+		}
+		species = last_created
+		ethos = {
+			ethic = "ethic_authoritarian"
+			ethic = "ethic_militarist"
+			ethic = "ethic_xenophobe"
+		}
+		origin = "origin_void_dwellers" # Should only be visible if they become spacefaring
+		flag = {
+			icon = {
+				category = "human"
+				file = "flag_human_12.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "stripe.dds"
+			}
+			colors={
+				"black"
+				"light_blue"
+				"null"
+				"null"
+			}
+		}
+		day_zero_contact = no
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = preindustrial_01
+		set_country_flag = stone_age
+		set_primitive_age = stone_age
+		set_country_flag = olaf_ninth_men
+	}
+	while = {
+		count = 4
+		create_pop = {
+			species = last_created
+		}
+	}
+	add_building = building_crude_huts
+	create_primitive_blockers = yes
+}
+
+#Olaf Eighteenth Men - Age of Perfection
+generate_olafeighteenthman_primitives_on_planet = {
+	create_species = {
+		name = Human
+		plural = Humans
+		class = "HUM"
+		portrait = "human"
+		traits = {
+			trait = "trait_psionic"
+			trait = "trait_robust"	
+			trait = "trait_venerable"
+			trait = "trait_presapient_natural_intellectuals"
+			trait = "trait_strong"	
+			trait = "trait_communal"
+			trait = "trait_social_pheromones"
+		}
+		homeworld = this
+		effect = {
+			save_global_event_target_as = olaf_eighteenth_men_species
+		}
+	}
+	create_country = {
+		name = "Enlightened Human Collective"
+		authority = "auth_democratic"
+		civics = {
+			civic = civic_increasing_urbanization
+			civic = civic_atmospheric_pollution
+		}
+		species = last_created
+		ethos = { 
+			ethic = "ethic_egalitarian"
+			ethic = "ethic_spiritualist"
+			ethic = "ethic_pacifist"
+		}
+		origin = "origin_void_dwellers" # Should only be visible if they become spacefaring
+		flag = {
+			icon = {
+				category = "human"
+				file = "flag_human_8.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "circle.dds"
+			}
+			colors={
+				"dark_blue"
+				"green"
+				"null"
+				"null"
+			}
+		}
+		day_zero_contact = no
+		type = primitive
+	}
+	last_created_country = {
+		set_graphical_culture = industrial_01
+		set_country_flag = early_space_age
+		set_primitive_age = early_space_age
+		set_country_flag = olaf_eighteenth_men
+	}
+	while = {
+		count = 28
+		create_pop = {
+			species = event_target:olaf_eighteenth_men_species
+		}
+	}
+	add_building = building_primitive_farm
+	add_building = building_primitive_factory
+	add_building = building_primitive_mine
+	add_building = building_primitive_power_plant
+	add_building = building_primitive_capital
+	add_building = building_urban_dwellings
+	create_primitive_blockers = yes
+	
+	create_fleet = {
+		name = "Trijovian Ark" 
+		effect = {
+			set_owner = last_created_country
+			create_ship = {
+				name = "Trijovian Ark"
+				design = "NAME_Space_Station"
+			}
+			set_location = PREV
+		}
+	}
+	
+	event_target:olaf_jupiter_habitat = {
+		while = {
+			count = 24
+			create_pop = {
+				species = event_target:olaf_eighteenth_men_species
+			}
+		}
+		set_owner = last_created_country
+		add_building = building_primitive_farm
+		add_building = building_primitive_factory
+		add_building = building_primitive_mine
+		add_building = building_primitive_power_plant
+		add_building = building_primitive_capital
+		add_building = building_urban_dwellings
+		create_primitive_blockers = yes
+	}
+	
+	event_target:olaf_saturn_habitat = {
+		while = {
+			count = 24
+			create_pop = {
+				species = event_target:olaf_eighteenth_men_species
+			}
+		}
+		set_owner = last_created_country
+		add_building = building_primitive_farm
+		add_building = building_primitive_factory
+		add_building = building_primitive_mine
+		add_building = building_primitive_power_plant
+		add_building = building_primitive_capital
+		add_building = building_urban_dwellings
+		create_primitive_blockers = yes
+	}
+}

@@ -1,0 +1,19 @@
+PRE_HUM = {
+	archetype = PRESAPIENT
+
+	playable = { always = no }
+	randomized = no
+
+	portraits = {
+		"pre_hum1"
+		"pre_hum2"
+	}
+
+	graphical_culture = humanoid_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+	uplifted_into = "HUM"
+	uplifted_portraits =
+	{
+		"human"
+	}
+}
